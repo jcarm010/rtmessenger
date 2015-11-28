@@ -2,6 +2,9 @@
   "name": "rtmessenger",
   "version": "0.0.1",
   "description": "A real time messenging system.",
+  "scripts":{
+    "start": "bin/www.js"
+  },
   "dependencies": {
     "express": "^4.10.2",
     "socket.io": "^1.3.7"

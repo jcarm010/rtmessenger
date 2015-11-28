@@ -79,8 +79,9 @@ def on_presence(channel, message):
     print("Presence received on channel " + channel + ": " + str(message))
 
 def main(argv):
-    m = RTMessenger("localhost", 3000, on_connect)
-    m.subscribe("TestChannel", on_message, presence_callback=on_presence , callback=on_subscribe)
+    m = RTMessenger("rtmessenger-env.elasticbeanstalk.com", 80, on_connect)
+    # m = RTMessenger("localhost", 3000, on_connect)
+    m.subscribe("TestChannel", on_message, presence_callback=on_presence, callback=on_subscribe)
     m.publish("TestChannel", {"say": "hello world"})
     while True:
         time.sleep(10)
